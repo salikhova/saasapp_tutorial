@@ -37,7 +37,11 @@ we are changing the view of every single page in our web-->
         </div><!-- /.navbar-collapse -->
       </div>
     </nav>
-
+    <div>  
+      <% flash.each do |type, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
